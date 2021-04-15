@@ -5,5 +5,7 @@ class RepositoriesController < ApplicationController
 
   def show
     @repository = Repository.find(params[:id]).decorate
+  rescue ActiveRecord::RecordNotFound
+    redirect_to repositories_path
   end
 end
