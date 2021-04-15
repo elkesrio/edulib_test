@@ -14,9 +14,9 @@ class Repositories::FetchOrList
   end
 
   def fetch_and_update_repositories!
-      github_client.repositories(user: USERNAME).map do |repo|
-        Repositories::FindOrCreate.new(url: repo['html_url'], description: repo['description'],
-                                       nb_of_stars: repo['stargazers_count']).call
-      end
+    github_client.repositories(user: USERNAME).map do |repo|
+      Repositories::FindOrCreate.new(url: repo['html_url'], description: repo['description'],
+                                     nb_of_stars: repo['stargazers_count']).call
+    end
   end
 end
