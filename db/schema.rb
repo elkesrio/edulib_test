@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_174117) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["url"], name: "index_repositories_on_url", unique: true
   end
 
 end

@@ -7,5 +7,7 @@ class CreateRepositories < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    add_index :repositories, :url, unique: true
   end
 end
